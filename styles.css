@@ -1,0 +1,396 @@
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: 'Merriweather', serif;
+}
+
+.logo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-image {
+    height: 25px; /* Adjust height to make the image smaller */
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    flex: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subscribe-button {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.subscribe-button:hover {
+    background-color: darkred;
+}
+
+.login-button {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.login-button i {
+    margin-left: 5px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #f4f4f4;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    position: relative;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(0.25cm - 1px); /* 0.25cm space and thinner border */
+    width: 1px;
+    background-color: #ccc;
+}
+
+.breadcrumbs {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    margin-left: 0.5cm; /* Align with the content box */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.breadcrumbs a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.content-box {
+    width: 45%; /* Increased width to 45% */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.5cm; /* To account for the 0.25cm space and the line */
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+    min-height: 80vh; /* Extend the box height */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.title-section {
+    margin-bottom: 10px;
+}
+
+.title-section h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2a2a2a;
+    margin: 0;
+}
+
+.title-section h2 {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #555;
+    margin: 0;
+    margin-top: 0.2em;
+}
+
+.buttons-section {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.buttons button {
+    background-color: transparent;
+    color: #0056b3;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.buttons button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.buttons button i {
+    margin-right: 5px;
+}
+
+.alternate-title {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+    color: gray;
+    margin-top: 10px;
+    font-size: 11px; /* Increased to 11px */
+}
+
+.author-info {
+    margin-top: 5px;
+    color: gray;
+    font-size: 11px; /* Increased to 11px */
+}
+
+.author-info a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.author-info a:hover {
+    text-decoration: underline;
+}
+
+.text-section {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.1em; /* Increase main text size */
+}
+
+article {
+    flex: 2;
+    font-size: 16px; /* Increase font size */
+    line-height: 1.5;
+    margin-right: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.image-box {
+    flex: 1;
+    width: 100%;
+    max-width: 200px; /* Adjusted to fit with the content box size */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.zoom-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    color: rgba(128, 128, 128, 0.7);
+    cursor: pointer;
+}
+
+.image-box p {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.image-box a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.image-box a:hover {
+    text-decoration: underline;
+}
+
+aside img {
+    max-width: 100%;
+    cursor: pointer; /* Add cursor pointer for zoomable image */
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included in width calculations */
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for the modal (zoomed image) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .content-box {
+        width: 100%;
+    }
+
+    .text-section {
+        flex-direction: column;
+    }
+
+    .image-box {
+        margin-top: 20px;
+        margin-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+}
