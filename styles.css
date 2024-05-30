@@ -1,21 +1,35 @@
+:root {
+    --primary-color: #002244; /* Bleu plus foncé */
+    --secondary-color: #0056b3;
+    --background-color: #f4f4f4;
+    --font-color: #2a2a2a;
+    --font-color-secondary: #555;
+    --font-family-primary: 'Source Sans Pro', Arial, sans-serif;
+    --font-family-secondary: 'Merriweather', serif;
+    --font-family-alternate: "Arial Narrow", Arial, sans-serif;
+}
+
 body {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: var(--font-family-primary);
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: var(--background-color);
+    color: var(--font-color);
 }
 
 header {
-    background-color: #003366;
+    background-color: var(--primary-color);
     color: white;
     padding: 10px;
     width: 100%;
     display: flex;
     align-items: center;
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-family-secondary);
+    position: relative; /* For dropdowns */
 }
 
 .logo-menu {
@@ -59,6 +73,7 @@ nav ul li a {
     text-decoration: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 nav ul li a i {
@@ -100,14 +115,62 @@ nav ul li a i {
     margin-left: 5px;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#browseBox {
+    top: 60px;
+    left: 10px;
+}
+
+#searchBox {
+    top: 60px;
+    left: 100px;
+}
+
+#loginBox {
+    top: 60px;
+    right: 10px;
+}
+
+.dropdown-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content button:hover {
+    background-color: darkblue;
+}
+
 main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px;
-    background-color: #f4f4f4;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    background-color: var(--background-color);
+    font-family: var(--font-family-primary);
     position: relative;
     box-sizing: border-box; /* Ensure padding is included in width calculations */
     overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -131,7 +194,7 @@ main::before {
 }
 
 .breadcrumbs a {
-    color: #0056b3;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -165,18 +228,18 @@ main::before {
 }
 
 .title-section h1 {
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-family-secondary);
     font-size: 2.5em;
     font-weight: bold;
-    color: #2a2a2a;
+    color: var(--font-color);
     margin: 0;
 }
 
 .title-section h2 {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: var(--font-family-primary);
     font-size: 1.5em;
     font-weight: normal;
-    color: #555;
+    color: var(--font-color-secondary);
     margin: 0;
     margin-top: 0.2em;
 }
@@ -193,7 +256,7 @@ main::before {
 
 .buttons button {
     background-color: transparent;
-    color: #0056b3;
+    color: var(--secondary-color);
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 5px 10px;
@@ -206,7 +269,7 @@ main::before {
 }
 
 .buttons button:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
     color: white;
 }
 
@@ -215,7 +278,7 @@ main::before {
 }
 
 .alternate-title {
-    font-family: "Arial Narrow", Arial, sans-serif;
+    font-family: var(--font-family-alternate);
     font-style: italic;
     color: gray;
     margin-top: 10px;
@@ -229,7 +292,7 @@ main::before {
 }
 
 .author-info a {
-    color: #0056b3;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
@@ -283,24 +346,56 @@ article {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 1.5;
+    font-weight: normal; /* Remove bold */
 }
 
-.image-box a {
-    color: #0056b3;
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.see-all-media {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
     text-decoration: none;
 }
 
-.image-box a:hover {
+.see-all-media:hover {
     text-decoration: underline;
 }
 
-aside img {
-    max-width: 100%;
-    cursor: pointer; /* Add cursor pointer for zoomable image */
+.separator {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.related-content-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: var(--secondary-color);
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    border: 1px solid var(--secondary-color);
+}
+
+.related-content-button:hover {
+    background-color: #f0f0f0;
 }
 
 footer {
-    background-color: #003366;
+    background-color: var(--primary-color);
     color: white;
     text-align: center;
     padding: 10px;
@@ -323,6 +418,11 @@ footer ul li {
 footer ul li a {
     color: white;
     text-decoration: none;
+}
+
+footer ul li a:focus,
+footer ul li a:hover {
+    text-decoration: underline;
 }
 
 /* Styles for the modal (zoomed image) */
@@ -372,6 +472,25 @@ footer ul li a {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+@media (max-width: 1200px) {
+    .content-box {
+        width: 60%;
+    }
+}
+
+@media (max-width: 992px) {
+    .content-box {
+        width: 75%;
+    }
 }
 
 @media (max-width: 768px) {

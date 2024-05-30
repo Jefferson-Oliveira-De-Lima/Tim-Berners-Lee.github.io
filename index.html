@@ -17,8 +17,8 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="#"><i class="fas fa-bars"></i> Browse</a></li>
-                    <li><a href="#"><i class="fas fa-search"></i> Search</a></li>
+                    <li><a href="#" id="browseBtn"><i class="fas fa-bars"></i> Browse</a></li>
+                    <li><a href="#" id="searchBtn"><i class="fas fa-search"></i> Search</a></li>
                     <li><a href="#">Dictionary</a></li>
                     <li><a href="#">Quizzes</a></li>
                     <li><a href="#">Money</a></li>
@@ -26,8 +26,24 @@
             </nav>
             <div class="right-menu">
                 <a href="#" class="subscribe-button">Subscribe</a>
-                <a href="#" class="login-button">Login <i class="fas fa-caret-down"></i></a>
+                <a href="#" id="loginBtn" class="login-button">Login <i class="fas fa-caret-down"></i></a>
             </div>
+        </div>
+        <!-- Browse Box -->
+        <div id="browseBox" class="dropdown-content">
+            <p>Browse content here...</p>
+        </div>
+        <!-- Search Box -->
+        <div id="searchBox" class="dropdown-content">
+            <input type="text" placeholder="Search...">
+            <button type="button">Search</button>
+        </div>
+        <!-- Login Box -->
+        <div id="loginBox" class="dropdown-content">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button type="button">Login</button>
         </div>
     </header>
     <main>
@@ -62,11 +78,13 @@
                         <img src="timBernersLeeMockupDesktop.png" alt="Tim Berners-Lee" class="zoomable">
                         <i class="fas fa-search-plus zoom-icon"></i>
                     </div>
-                    <p><strong>Tim Berners-Lee</strong></p>
+                    <p>Tim Berners-Lee</p>
+                    <a href="#" class="see-all-media">See all media</a>
+                    <hr class="divider">
                     <p><strong>Born:</strong> June 8, 1955 (age 67) • <a href="#">London</a> • <a href="#">England</a></p>
                     <p><strong>Founder:</strong> <a href="#">World Wide Web Consortium</a></p>
                     <p><strong>Inventions:</strong> <a href="#">World Wide Web</a> • <a href="#">World Wide Web</a></p>
-                    <a href="#">See all related content →</a>
+                    <a href="#" class="related-content-button">See all related content →</a>
                 </aside>
             </section>
         </section>
